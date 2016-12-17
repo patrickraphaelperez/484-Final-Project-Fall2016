@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up/Log In Page</title>
+    <style type="text/css">
+        label {
+            width: 7em;
+            float: left;
+        }
+    </style>
+    <script>
+        function passMatch(){
+            //store the password field objects into variables
+            var passwordNew = document.getElementById('passwordNew');
+            var passwordConfirm = document.getElementById('passwordConfirm');
+            //store the confirmation mesasge object
+            var message = document.getElementById('nomatch');
+            //set the error color to red
+            var errorColor = "#ff0000";
+            if (passwordNew.value != passwordConfirm.value){
+                message.style.color = errorColor;
+                message.innerHTML = "Passwords don't match!";
+            }
+            else {
+                message.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- This form is for returning users to log in -->
+    <form class="logIn" method="post" action="login.php">
+        <h1>Registered Users:</h1>
+        <div><label>Username:</label>
+            <input type="text" name="username"></div>
+       <div><label>Password:</label>
+           <input type="password" name="password"></div>
+        <p><input type="submit" value="Log In"></p>
+    </form>
+
+    <!-- This form is for new users to sign up -->
+    <form class ="signUp" method="post" action="signup.php">
+        <h1>New Users:</h1>
+        <div><label>First Name:</label>
+            <input type="text" name="FirstName"></div>
+        <div><label>Last Name:</label>
+            <input type="text" name="LastName"></div>
+        <div><label>Phone Number:</label>
+            <input type="text" name="phone" placeholder="(555) 555-5555"></div>
+        <div><label>E-Mail:</label>
+            <input type="text" name="email" placeholder="example@example.com"></div>
+        <div><label>Username:</label>
+        <input type="text" name="username"></div>
+        <div><label>Password:</label>
+            <input type="password" name="password" id="passwordNew"></div>
+        <div><label>Re-type Password:</label>
+            <input type="password" name="password" id="passwordConfirm" onkeyup="passMatch(); return false;">
+            <span id="nomatch" class="nomatch"></span></div>
+        <p><br><input type="submit" value="Sign Up"></p>
+    </form>
+
+</body>
+</html>
