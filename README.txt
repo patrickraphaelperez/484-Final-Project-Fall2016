@@ -30,7 +30,6 @@ Part III: signup.php // functionality: COMPLETE
     - "mysql_select_db()"" gave me errors -- as a result, I used mysqli and switched my parameters
     - EXAMPLE: mysqli_select_db($database, "finaldb");
 > able to display all registered users by first name and last name
-    - attached screenshot of final result (signup.php_SCREENSHOT.png)
 
 PART IV: login.php // functionality: COMPLETE
 > log in error message works
